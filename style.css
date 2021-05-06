@@ -18,8 +18,8 @@
     --strong-cyan: hsl(171, 66%, 44%);
     --stronger-light-blue: hsl(233, 72%, 57%);
     --light-blue: hsl(233, 100%, 69%);
-    --dark-grayish-blue: hsl(210, 10%, 33%);
-    --grayish-blue: hsl(201, 11%, 66%);
+    --dark-grayish-blue: hsl(210, 5%, 22%);
+    --grayish-blue: hsl(200, 5%, 45%);
     --grayish-blue-footer: hsla(202, 11%, 66%, 0.171);
     --bolder-font: 600;
     --normal-font: 400;
@@ -55,6 +55,14 @@ body {
 img {
     display: block;
     max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--strong-cyan);
 }
 
 h3,
@@ -114,8 +122,11 @@ a {
 
 }
 
-.btn:hover {
+.btn:hover,
+.btn:active,
+.btn:focus {
     opacity: .75;
+    color: white;
 }
 
 .btn-primary {
@@ -299,6 +310,7 @@ footer {
     justify-content: center;
     align-items: center;
     background-color: var(--grayish-blue-footer);
+    width: 100%;
     padding: 3rem;
     text-align: center;
 }
@@ -311,6 +323,10 @@ footer .footer-logo {
 
 
 .footer-navs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-family: bai-light;
     font-weight: 200;
     color: var(--dark-grayish-blue);
@@ -374,7 +390,28 @@ footer .footer-logo {
     cursor: pointer;
 }
 
-@media screen and (min-width:1440px) {
+.logo-nav-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-navs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-navs>* {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width:1200px) {
 
     .heading {
         padding: 0 16.2rem;
@@ -405,6 +442,7 @@ footer .footer-logo {
         justify-content: center;
         align-items: center;
         margin-bottom: 8rem;
+        max-width: 1000px;
     }
 
     .btn-wrapper .btn:last-of-type {
@@ -486,6 +524,10 @@ footer .footer-logo {
         padding: 3rem;
     }
 
+    .section-3-sub-content-wrapper .info {
+        flex-basis: 33%;
+    }
+
     #brand-wrapper {
         width: 90%;
         display: flex;
@@ -497,7 +539,7 @@ footer .footer-logo {
     }
 
     .section-5 {
-        padding: 0 18rem;
+        padding: 0 15rem;
     }
 
     .section-5 .btn-wrapper {
@@ -505,24 +547,233 @@ footer .footer-logo {
         justify-content: center;
         width: 80%;
         margin: 4rem auto 10rem auto;
+        max-width: 1000px;
     }
 
 
+
+
+    footer {
+        padding: 2rem 10rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-nav-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-basis: 65%;
+    }
+
+    .footer-logo {
+        align-self: flex-start;
+
+    }
+
+    .footer-navs {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-left: 2rem;
+    }
+
+    .footer-navs div:not(last-of-type) {
+        padding-right: 1.8rem;
+    }
+
+    .footer-navs>div>* {
+        align-self: flex-start;
+    }
+
+    .footer-social-icons {
+        align-items: flex-start;
+        margin-top: 0;
+    }
+
+    .logo-nav-wrapper {
+        align-items: flex-start;
+    }
+
+    .footer-navs {
+        align-items: flex-start;
+    }
+
+    footer {
+        padding-top: 4rem;
+        align-items: flex-start;
+    }
+
 }
 
-footer {
-    padding: 2rem 10rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between
-}
+@media screen and (min-width:1900px) {
+    section.heading {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-.footer-navs {
-    display: flex;
-    flex-direction: row;
-    margin-left: -200px;
-}
+    section.heading .logo {
+        margin-top: 3.2rem;
+    }
 
-.footer-navs div:not(last-of-type) {
-    padding-right: 1.8rem;
+    section.heading .main-title {
+        margin-top: 2rem;
+        font-size: 3.1rem;
+        font-weight: 600;
+        letter-spacing: 2.3px;
+        margin-bottom: .8rem;
+    }
+
+    section.heading .title-desc {
+        font-size: 1.5rem;
+        padding: 1.5rem 7.5rem 0 7.5rem;
+    }
+
+    .heading .btn-wrapper {
+        width: 100%;
+    }
+
+    .btn-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        padding: 2rem 2rem;
+        font-size: 1.2rem;
+        width: 100%;
+        max-width: 1000px;
+    }
+
+    .btn-wrapper a.btn {
+        margin: 0;
+        padding: 1.2rem 2.3rem;
+        width: 30%;
+    }
+
+    .section-1 .section-1-main-title {
+        font-size: 2.7rem;
+    }
+
+    .section-1 .section-1-title-desc {
+        font-size: 1.25rem;
+        padding: 1.5rem 7.5rem 1.5rem 7.5rem;
+        letter-spacing: 1.5px;
+        line-height: 2rem;
+    }
+
+    .section-1 .sub-content-img {
+        margin-left: -10%;
+        width: 100%;
+    }
+
+    .section-1-content-right {
+        margin-top: -4rem;
+        margin-left: 10rem;
+        margin-right: 0rem;
+    }
+
+    h3.content-right-heading {
+        margin-left: 0;
+        font-size: 2rem;
+    }
+
+    div.content-right-desc {
+        font-size: 1.2rem;
+    }
+
+    img.left-img {
+        width: 100%;
+
+    }
+
+    section.section-2 .section-2-main-title {
+        font-size: 2.7rem;
+    }
+
+    section.section-2 .section-2-title-desc {
+        font-size: 1.25rem;
+        letter-spacing: 1.25px;
+        padding: 1rem 8rem;
+    }
+
+    section.section-3 .section-3-main-title {
+        font-size: 2.7rem;
+    }
+
+    section.section-3 .section-3-title-desc {
+        font-size: 1.25rem;
+        letter-spacing: 1.25px;
+        padding: 1rem 8rem;
+    }
+
+    .section-3-sub-content-wrapper h5 {
+        font-size: 1.5rem;
+    }
+
+    .section-3-sub-content-wrapper {
+        padding-right: 5rem;
+        padding-left: 5rem;
+        align-items: flex-start;
+    }
+
+    .section-3-sub-content-wrapper .info {
+        flex-basis: 33%;
+    }
+
+    .section-3-sub-content-wrapper .info-desc {
+        line-height: 2rem;
+        letter-spacing: 2px;
+        font-size: 1.25rem;
+    }
+
+    section.section-5 .main-title {
+        margin-top: 2rem;
+        font-size: 2.6rem;
+        font-weight: 600;
+        letter-spacing: 2.1px;
+        margin-bottom: .8rem;
+    }
+
+    section.section-5 .title-desc {
+        font-size: 1.3rem;
+        padding: 1.5rem 7.5rem 0 7.5rem;
+        margin-bottom: 1rem;
+    }
+
+    section.section-5 .btn-wrapper a {
+        flex-basis: 30%;
+    }
+
+    footer {
+        align-items: flex-start;
+        padding: 4rem 15rem;
+    }
+
+    .footer-navs {
+        font-size: 1.25rem;
+    }
+
+    .footer-navs:not(last-child)>div {
+        margin-right: 5rem;
+    }
+
+    .logo-nav-wrapper {
+        align-items: flex-start;
+    }
+
+    .footer-navs {
+        align-items: flex-start;
+    }
+
+    footer div.footer-logo {
+        margin-bottom: 0;
+    }
+
 }
